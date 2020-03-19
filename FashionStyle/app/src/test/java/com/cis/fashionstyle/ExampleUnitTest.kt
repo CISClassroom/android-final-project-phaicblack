@@ -1,4 +1,4 @@
-package com.cis.fashionstyle
+package th.ac.kku.cis.mobileapp.fashionstyle
 
 import org.junit.Test
 

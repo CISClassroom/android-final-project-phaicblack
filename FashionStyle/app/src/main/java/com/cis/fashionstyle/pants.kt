@@ -1,4 +1,4 @@
-package com.cis.fashionstyle
+package th.ac.kku.cis.mobileapp.fashionstyle
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cis.fashionstyle">
+    package="th.ac.kku.cis.mobileapp.fashionstyle">
 
     <application
         android:allowBackup="true"

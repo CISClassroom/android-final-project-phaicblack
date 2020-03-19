@@ -1,8 +1,8 @@
-package com.cis.fashionstyle.listshop
+package th.ac.kku.cis.mobileapp.fashionstyle.listshop
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.cis.fashionstyle.R
+import th.ac.kku.cis.mobileapp.fashionstyle.R
 
 class shirt01 : AppCompatActivity() {
 
