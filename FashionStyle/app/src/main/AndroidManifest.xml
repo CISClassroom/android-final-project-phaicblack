@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="th.ac.kku.cis.mobileapp.fashionstyle">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".listshop.shoes02"></activity>
+        <activity android:name="com.cis.fashionstyle.Admin.order"></activity>
+        <activity android:name="com.cis.fashionstyle.listall.listpant" />
+        <activity android:name="com.cis.fashionstyle.listall.listshoes" />
+        <activity android:name="com.cis.fashionstyle.listall.listhat" />
+        <activity android:name="com.cis.fashionstyle.listall.listshirt" />
+        <activity android:name=".listshop.shoes02" />
         <activity android:name=".listshop.shoes01" />
         <activity android:name=".listshop.hat02" />
         <activity android:name=".listshop.hat01" />
@@ -18,7 +26,6 @@
         <activity android:name=".listshop.shirt02" />
         <activity android:name=".listshop.shirt01" />
         <activity android:name=".shoes" />
-        <activity android:name=".shose" />
         <activity android:name=".hat" />
         <activity android:name=".pants" />
         <activity android:name=".shirt" />

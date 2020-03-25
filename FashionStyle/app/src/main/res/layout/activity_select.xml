@@ -11,52 +11,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F2ED8C"
-        tools:layout_editor_absoluteX="-76dp"
-        tools:layout_editor_absoluteY="-130dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="0dp">
 
-        <Button
-            android:id="@+id/button4"
+        <TextView
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginBottom="16dp"
-            android:text="ย้อนกลับ"
+            android:text="email"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.036"
+            app:layout_constraintHorizontal_bias="0.625"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.962" />
+            app:layout_constraintVertical_bias="0.047" />
+
+        <ImageView
+            android:id="@+id/Profile"
+            android:layout_width="70dp"
+            android:layout_height="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.007"
+            app:srcCompat="@drawable/ic_launcher_background" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ออกจากระบบ"
-            app:layout_constraintBottom_toBottomOf="@+id/button4"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.786"
-            app:layout_constraintStart_toEndOf="@+id/button4"
+            app:layout_constraintHorizontal_bias="0.859"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="0.939" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="User"
+            android:text="Username"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.781"
-            app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.637"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.007"
+            tools:textStyle="bold" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="32dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="72dp"
             android:text="เลือกหมวดหมู่"
             android:textColor="@android:color/background_dark"
             android:textSize="30sp"
@@ -65,47 +78,55 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
-            android:layout_width="168dp"
-            android:layout_height="175dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="104dp"
+            android:id="@+id/Buttonsshirt"
+            android:layout_width="150dp"
+            android:layout_height="172dp"
             android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.099"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.245"
             app:srcCompat="@drawable/shirt" />
 
         <ImageButton
-            android:id="@+id/imageButton5"
-            android:layout_width="168dp"
-            android:layout_height="175dp"
-            android:layout_marginStart="220dp"
-            android:layout_marginTop="104dp"
+            android:id="@+id/Buttonspant"
+            android:layout_width="150dp"
+            android:layout_height="172dp"
             android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.245"
             app:srcCompat="@drawable/pant" />
 
         <ImageButton
-            android:id="@+id/imageButton6"
-            android:layout_width="168dp"
-            android:layout_height="189dp"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="312dp"
+            android:id="@+id/Buttonsshoes"
+            android:layout_width="150dp"
+            android:layout_height="172dp"
             android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.099"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.64"
             app:srcCompat="@drawable/shoes" />
 
         <ImageButton
-            android:id="@+id/imageButton8"
-            android:layout_width="166dp"
-            android:layout_height="189dp"
-            android:layout_marginStart="220dp"
-            android:layout_marginTop="312dp"
+            android:id="@+id/Buttonshat"
+            android:layout_width="150dp"
+            android:layout_height="172dp"
             android:backgroundTint="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.64"
             app:srcCompat="@drawable/hat" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

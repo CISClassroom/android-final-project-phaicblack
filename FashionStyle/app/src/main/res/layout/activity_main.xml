@@ -30,20 +30,4 @@
         app:layout_constraintVertical_bias="0.276"
         app:srcCompat="@drawable/logo" />
 
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="logout"
-        tools:layout_editor_absoluteX="286dp"
-        tools:layout_editor_absoluteY="649dp" />
-
-    <TextView
-        android:id="@+id/show"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="user"
-        tools:layout_editor_absoluteX="269dp"
-        tools:layout_editor_absoluteY="476dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

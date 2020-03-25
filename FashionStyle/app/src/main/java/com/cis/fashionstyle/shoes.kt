@@ -8,5 +8,7 @@ class shoes : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_shoes)
+        if (supportActionBar != null)
+            supportActionBar?.hide()
     }
 }

@@ -1,10 +1,17 @@
 package th.ac.kku.cis.mobileapp.fashionstyle
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
+import com.cis.fashionstyle.Admin.order
 import com.cis.fashionstyle.Model.modelitem
+import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
@@ -16,6 +23,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
     lateinit var googleClient: GoogleSignInClient
+    var newpropro:Boolean = false
+    private val PERMISSION_CODE = 1000;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,18 +32,21 @@ class MainActivity : AppCompatActivity() {
         if (supportActionBar != null)
             supportActionBar?.hide()
 
-        var newpropro:Boolean = false
-
-        override fun onCreate(savedInstanceState: Bundle?) {
-            super.onCreate(savedInstanceState)
-            setContentView(R.layout.activity_main)
-            if (supportActionBar != null)
-                supportActionBar?.hide()
-
             auth = FirebaseAuth.getInstance()
 
             login.setOnClickListener({ v -> singIn() })
-            logout.setOnClickListener({ v -> singOut() })
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+            if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
+                //permission was not enabled
+                val permission = arrayOf( Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                //show popup to request permission
+                requestPermissions(permission, PERMISSION_CODE)
+            }
+            else{
+
+            }
+        }
 
             var gso = GoogleSignInOptions.Builder(
                 GoogleSignInOptions.DEFAULT_SIGN_IN
@@ -48,12 +60,37 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        //called when user presses ALLOW or DENY from Permission Request Popup
+        when(requestCode){
+            PERMISSION_CODE -> {
+                if (grantResults.size > 0 && grantResults[0] ==
+                    PackageManager.PERMISSION_GRANTED){
+
+                }
+                else {
+                    //permission from popup was denied
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
+                    finish();
+                    
+                }
+            }
+        }
+    }
 
         private fun newproject() {
             if(newpropro) {
-                var i = Intent(this, MainActivity::class.java)
+                if(auth!!.currentUser?.email =="phaicblack55@gmail.com" ){
+                    var i = Intent(this, order::class.java)
+                    i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+                    startActivity(i)
+                }
+                else{
+                var i = Intent(this, select::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
+                }
+
             }
         }
 
@@ -66,16 +103,16 @@ class MainActivity : AppCompatActivity() {
 
         private fun updateUI(user: FirebaseUser?) {
             if (user == null) {
-                show.text = "No User"
+               // show.text = "No User"
             } else {
-                show.text = user.email.toString()
+              //  show.text = user.email.toString()
                 newproject()
             }
 
         }
 
         private fun singIn() {
-
+            singOut()
 
             if(newpropro){
                 newproject()
@@ -124,5 +161,3 @@ class MainActivity : AppCompatActivity() {
 
         var mainAc = mutableListOf<modelitem>()
     }
-    }
-}
