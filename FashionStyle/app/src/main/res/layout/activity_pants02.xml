@@ -48,6 +48,15 @@
             tools:textStyle="bold" />
 
         <TextView
+            android:id="@+id/textnameorder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="สินค้า : กางเกงขายาว  "
+            tools:textColor="@android:color/background_dark"
+            tools:textSize="18sp"
+            tools:textStyle="bold" />
+
+        <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,13 +67,14 @@
             tools:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/tbaddress"
             android:layout_width="match_parent"
             android:layout_height="111dp"
             android:background="#F4EFAF"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:text="ที่อยู่ : " />
 
         <TextView
             android:id="@+id/textView5"
@@ -78,13 +88,14 @@
             tools:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/tbcount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#F4EFAF"
             android:ems="10"
             android:gravity="start|top"
-            android:inputType="textMultiLine" />
+            android:inputType="textMultiLine"
+            android:text="จำนวน : " />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -104,7 +115,7 @@
                 app:layout_constraintVertical_bias="0.876" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btpant02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="สั่งซื้อ"
