@@ -35,6 +35,10 @@ class shirt02 : AppCompatActivity() {
             builder.setTitle("ยืนยันการสั่งซื้อ")
             builder.setMessage("คุณต้องการสั่งซื้อหรือไม่ ?")
 
+            builder.setNegativeButton("ยกเลิก") { dialog, which ->
+                dialog.dismiss()
+            }
+
             builder.setPositiveButton("ยืนยัน") { dialog, which ->
                 var newData: Modelorder = Modelorder.create()
                 val obj = mDB.child("Data_item").push()
@@ -50,9 +54,7 @@ class shirt02 : AppCompatActivity() {
                 var i = Intent(this, select::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
-                builder.setPositiveButton("ยกเลิก") { dialog, which ->
-                    dialog.dismiss()
-                }
+
             }
 
 

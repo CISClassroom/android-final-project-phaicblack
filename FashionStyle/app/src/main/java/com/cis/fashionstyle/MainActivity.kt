@@ -23,7 +23,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
     lateinit var googleClient: GoogleSignInClient
-    var newpropro:Boolean = false
+    var boo:Boolean = false
     private val PERMISSION_CODE = 1000;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,8 +78,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-        private fun newproject() {
-            if(newpropro) {
+        private fun checklogin() {
+            if(boo) {
                 if(auth!!.currentUser?.email =="phaicblack55@gmail.com" ){
                     var i = Intent(this, order::class.java)
                     i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                // show.text = "No User"
             } else {
               //  show.text = user.email.toString()
-                newproject()
+                checklogin()
             }
 
         }
@@ -114,8 +114,8 @@ class MainActivity : AppCompatActivity() {
         private fun singIn() {
             singOut()
 
-            if(newpropro){
-                newproject()
+            if(boo){
+                checklogin()
             }
             else {
                 var signInInent = googleClient.signInIntent
@@ -132,7 +132,7 @@ class MainActivity : AppCompatActivity() {
                     firebaseAuth(account!!)
                     //FirebaseAuth(account)
                 } catch (e: ApiException) {
-                    newpropro = false
+                    boo = false
                     updateUI(null)
                 }
             }
@@ -144,10 +144,10 @@ class MainActivity : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         val user = auth.currentUser
-                        newpropro = true
+                        boo = true
                         updateUI(user)
                     } else {
-                        newpropro = false
+                        boo = false
                         updateUI(null)
                     }
                 }

@@ -25,8 +25,8 @@ import com.squareup.picasso.Picasso
 
 class select : AppCompatActivity() {
     lateinit var auth: FirebaseAuth
-    lateinit var googleClient: GoogleSignInClient
-    var newpropro:Boolean = false
+   // lateinit var googleClient: GoogleSignInClient
+    var boo:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -77,7 +77,7 @@ class select : AppCompatActivity() {
         }
     }
         private fun passproject() {
-            if (newpropro) {
+            if (boo) {
                 var i = Intent(this, MainActivity::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
@@ -86,7 +86,7 @@ class select : AppCompatActivity() {
         }
         private fun singOut() {
             auth.signOut()
-            newpropro = true
+            boo = true
             passproject()
         }
 
@@ -110,7 +110,7 @@ class select : AppCompatActivity() {
                     //FirebaseAuth(account)
                 } catch (e: ApiException) {
                     Log.i("Error OOP", e.toString())
-                    newpropro = false
+                    boo = false
                     updateUI(null)
                 }
             }
@@ -122,10 +122,10 @@ class select : AppCompatActivity() {
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         val user = auth.currentUser
-                        newpropro = true
+                        boo = true
                         updateUI(user)
                     } else {
-                        newpropro = false
+                        boo = false
                         updateUI(null)
                     }
                 }

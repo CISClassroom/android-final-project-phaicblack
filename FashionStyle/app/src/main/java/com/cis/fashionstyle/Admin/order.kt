@@ -20,7 +20,7 @@ class order : AppCompatActivity() {
     lateinit var items:MutableList<Modelorder>
     lateinit var auth: FirebaseAuth
     lateinit var googleClient: GoogleSignInClient
-    var newpropro:Boolean = false
+    var boo:Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,7 +54,7 @@ class order : AppCompatActivity() {
         )
     }
     private fun passproject() {
-        if (newpropro) {
+        if (boo) {
             var i = Intent(this, MainActivity::class.java)
             i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(i)
@@ -63,7 +63,7 @@ class order : AppCompatActivity() {
     }
     private fun singOut() {
         auth.signOut()
-        newpropro = true
+        boo = true
         passproject()
     }
 }
