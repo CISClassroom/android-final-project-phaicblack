@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import com.cis.fashionstyle.Model.Modelorder
@@ -22,6 +23,10 @@ class pants01 : AppCompatActivity() {
         setContentView(R.layout.activity_pants01)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         val goback: Button = findViewById(R.id.bb02)
         mDB = FirebaseDatabase.getInstance().reference
 

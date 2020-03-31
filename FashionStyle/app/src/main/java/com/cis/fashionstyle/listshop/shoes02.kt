@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.Toast
 import com.cis.fashionstyle.Model.Modelorder
@@ -21,6 +22,10 @@ class shoes02 : AppCompatActivity() {
         setContentView(R.layout.activity_shoes02)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         val goback: Button = findViewById(R.id.bb02)
         mDB = FirebaseDatabase.getInstance().reference
 
@@ -53,7 +58,7 @@ class shoes02 : AppCompatActivity() {
                 var i = Intent(this, select::class.java)
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 startActivity(i)
-                
+
             }
 
 

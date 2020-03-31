@@ -3,6 +3,7 @@ package com.cis.fashionstyle.listall
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.ListView
 import android.widget.Toast
 import com.cis.fashionstyle.Adapter.adapteritem
@@ -18,6 +19,10 @@ class listshirt : AppCompatActivity() {
         setContentView(R.layout.activity_listshirt)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         var item = mutableListOf<modelitem>()
 
         item.add(modelitem("เสื้อแขนยาวลายการ์ตูน ","ราคา 270",R.drawable.shirt01))

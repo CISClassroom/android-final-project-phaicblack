@@ -3,6 +3,7 @@ package com.cis.fashionstyle.Admin
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ListView
 import com.cis.fashionstyle.Adapter.adapterorder
@@ -27,6 +28,9 @@ class order : AppCompatActivity() {
         setContentView(R.layout.activity_order)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
         listview = findViewById(R.id.listvieworder)
         items = mutableListOf()

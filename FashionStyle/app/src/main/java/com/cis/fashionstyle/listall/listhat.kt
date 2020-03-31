@@ -3,6 +3,7 @@ package com.cis.fashionstyle.listall
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.ListView
 import com.cis.fashionstyle.Adapter.adapterhat
 import com.cis.fashionstyle.Adapter.adapteritem
@@ -20,6 +21,10 @@ class listhat : AppCompatActivity() {
         setContentView(R.layout.activity_listhat)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         var item = mutableListOf<modelitem>()
 
         item.add(modelitem("หมวก Cap","ราคา 450",R.drawable.hat02))

@@ -3,6 +3,7 @@ package com.cis.fashionstyle.listall
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.ListView
 import com.cis.fashionstyle.Adapter.adapterhat
 import com.cis.fashionstyle.Adapter.adaptershoes
@@ -20,6 +21,10 @@ class listshoes : AppCompatActivity() {
         setContentView(R.layout.activity_listshoes)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         var item = mutableListOf<modelitem>()
 
         item.add(modelitem("รองเท้า Nike","ราคา 2,200",R.drawable.shoes01))
