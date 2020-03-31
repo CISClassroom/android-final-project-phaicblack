@@ -5,6 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -33,6 +34,10 @@ class select : AppCompatActivity() {
         setContentView(R.layout.activity_select)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
+
         val goshirt: ImageButton = findViewById(R.id.Buttonsshirt)
         val gopant: ImageButton = findViewById(R.id.Buttonspant)
         val goshoes: ImageButton = findViewById(R.id.Buttonsshoes)

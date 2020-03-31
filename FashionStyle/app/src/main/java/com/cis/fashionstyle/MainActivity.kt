@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import android.widget.Toast
 import com.cis.fashionstyle.Admin.order
 import com.cis.fashionstyle.Model.modelitem
@@ -31,6 +32,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         if (supportActionBar != null)
             supportActionBar?.hide()
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
             auth = FirebaseAuth.getInstance()
 
